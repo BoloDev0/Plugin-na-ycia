@@ -1,1 +1,4 @@
-Plugin na zycia na wersje 1.20.1 
+PLUGIN NA ZYCIA
+- WERSJA: 1.20.1
+- JEST CONFIG (WSZYSTKO TAM MOZNA ZEDYTOWAC)
+
