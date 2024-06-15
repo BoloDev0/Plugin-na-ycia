@@ -1,0 +1,19 @@
+messages:
+  no_permission: "&cNie masz uprawnien do tej komendy!" # wiadomosc permisji
+  usage_give_lives: "&ePoprawne użycie: &6/dajzycie <nick> <ilość>" # wiadomosc poprawnego uzycia komendy /dajzycie
+  player_not_online: "&cGracz o nicku {player} nie jest online!" # wiadomosc ze gracz o podanym nicku nie jest online (gdy np chcemy zabrac zycie albo dodac)
+  amount_not_number: "&cIlość musi być liczbą!" # Widomosc ze gdy zabieramy/dodajemy zycie to musimy podac liczbe a nie np litere
+  lives_given_sender: "&aDodano {amount} żyć graczowi {player}." # Wiadomosc, ze dodano np 1 zycie graczowi
+  lives_given_target: "&aOtrzymałeś {amount} żyć." # wiadomsoc ktora dostaje gracz ze dostal np 1 zycie
+
+  usage_take_lives: "&ePoprawne użycie: &6/usunzycie <nick> <ilość>" # wiadomosc poprawnego uzycia komendy usunzycie
+  lives_taken_sender: "&aUsunięto {amount} żyć graczowi {player}." # wiadomosc ze usunieto np 1 zycie graczowi
+  lives_taken_target: "&cStraciłeś {amount} żyć." # wiadomosc ktora dostaje gracz ze zabrales mu np 1 zycie
+
+  lives_command_console: "&cKomenda dla graczy tylko (bo konsola nie ma zyc XD)" # Tego nie zmieniaj
+  lives_command_player: "&aIlość twoich żyć: &b{lives}" # Wiadomosc komendy /zycia (pokazuje ile zyc zostalo graczowi)
+
+  player_lost_all_lives: "&cStraciłeś wszystkie swoje życia! Zostajesz zbanowany na 24 godziny!" # wiadomosc, ze gracz stracil wszystkie zycia i dostaje bana na 24h
+  player_lost_life: "&cStraciłeś jedno życie. Pozostało: &b{lives}" # wiadomosc ze gracz po smierci stracil 1 zycie i zostalo mu np 2 zycia
+  player_ban_command: "tempban:tempban {player} 24h Brak żyć" # komenda ktora daje bana na 24h graczowi
+  reset_lives_after_ban: "&aTwoje życia zostały zresetowane po banie!" # wiadomosc gdy gracz wejdzie po banie na serwer

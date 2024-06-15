@@ -1,0 +1,17 @@
+name: bolodev-zycia
+version: '${project.version}'
+main: bolodev.bolodevzycia.Main
+api-version: '1.20'
+author: BoloDev
+
+commands:
+  zycia:
+  dajzycie:
+    permission: bolodev.zycia.dajzycie
+  usunzycie:
+    permission: bolodev.zycia.usunzycie
+permissions:
+  bolodev.zycia.dajzycie:
+    default: op
+  bolodev.zyciau.usunzycie:
+    default: op

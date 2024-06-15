@@ -1,0 +1,6 @@
+bolodev\bolodevzycia\Managers\LivesManager.class
+bolodev\bolodevzycia\Commands\LivesCommand.class
+bolodev\bolodevzycia\Commands\TakeLivesCommand.class
+bolodev\bolodevzycia\Listeners\DeathListener.class
+bolodev\bolodevzycia\Commands\GiveLivesCommand.class
+bolodev\bolodevzycia\Main.class
