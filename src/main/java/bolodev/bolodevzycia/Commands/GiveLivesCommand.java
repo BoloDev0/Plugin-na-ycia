@@ -17,7 +17,7 @@ public class GiveLivesCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!sender.hasPermission("mcszlamek.dajzycie")) {
+        if (!sender.hasPermission("bolodev.zycia.dajzycie")) {
             sender.sendMessage(plugin.getMessage("no_permission"));
             return true;
         }
