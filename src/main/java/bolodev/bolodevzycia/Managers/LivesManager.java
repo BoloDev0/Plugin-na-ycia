@@ -9,7 +9,7 @@ public class LivesManager {
     private final Map<String, Integer> playerLives = new HashMap<>();
 
     public int getPlayerLives(Player player) {
-        return playerLives.getOrDefault(player.getName(), 0);
+        return playerLives.getOrDefault(player.getName(), 3);
     }
 
     public void setPlayerLives(Player player, int lives) {
@@ -23,6 +23,6 @@ public class LivesManager {
 
     public void takePlayerLives(Player player, int amount) {
         int currentLives = getPlayerLives(player);
-        setPlayerLives(player, Math.max(0, currentLives - amount));
+        setPlayerLives(player, Math.max(3, currentLives - amount));
     }
 }
