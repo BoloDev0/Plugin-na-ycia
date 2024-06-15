@@ -2,7 +2,6 @@ package bolodev.bolodevzycia.Commands;
 
 import bolodev.bolodevzycia.Main;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -19,18 +18,18 @@ public class TakeLivesCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!sender.hasPermission("mcszlamek.usunzycie")) {
-            sender.sendMessage(ChatColor.RED + "Nie masz uprawnien do tej komendy!");
+            sender.sendMessage(plugin.getMessage("no_permission"));
             return true;
         }
 
         if (args.length < 2) {
-            sender.sendMessage(ChatColor.YELLOW + "Poprawne użycie: " + ChatColor.GOLD + "/usunzycie <nick> <ilość>");
+            sender.sendMessage(plugin.getMessage("usage_take_lives"));
             return true;
         }
 
         Player target = Bukkit.getPlayer(args[0]);
         if (target == null) {
-            sender.sendMessage(ChatColor.RED + "Gracz o nicku " + args[0] + " nie jest online!");
+            sender.sendMessage(plugin.getMessage("player_not_online").replace("{player}", args[0]));
             return true;
         }
 
@@ -38,13 +37,13 @@ public class TakeLivesCommand implements CommandExecutor {
         try {
             amount = Integer.parseInt(args[1]);
         } catch (NumberFormatException e) {
-            sender.sendMessage(ChatColor.RED + "Ilość musi być liczbą!");
+            sender.sendMessage(plugin.getMessage("amount_not_number"));
             return true;
         }
 
         plugin.getLivesManager().takePlayerLives(target, amount);
-        sender.sendMessage(ChatColor.GREEN + "Usunięto " + amount + " żyć graczowi " + target.getName() + ".");
-        target.sendMessage(ChatColor.RED + "Straciłeś " + amount + " żyć.");
+        sender.sendMessage(plugin.getMessage("lives_taken_sender").replace("{amount}", String.valueOf(amount)).replace("{player}", target.getName()));
+        target.sendMessage(plugin.getMessage("lives_taken_target").replace("{amount}", String.valueOf(amount)));
         return true;
     }
 }

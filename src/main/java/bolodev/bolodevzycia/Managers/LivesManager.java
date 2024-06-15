@@ -4,22 +4,16 @@ import org.bukkit.entity.Player;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 public class LivesManager {
-
-    private Map<UUID, Integer> playerLives;
-
-    public LivesManager() {
-        this.playerLives = new HashMap<>();
-    }
+    private final Map<String, Integer> playerLives = new HashMap<>();
 
     public int getPlayerLives(Player player) {
-        return playerLives.getOrDefault(player.getUniqueId(), 3);
+        return playerLives.getOrDefault(player.getName(), 0);
     }
 
     public void setPlayerLives(Player player, int lives) {
-        playerLives.put(player.getUniqueId(), lives);
+        playerLives.put(player.getName(), lives);
     }
 
     public void givePlayerLives(Player player, int amount) {
@@ -29,6 +23,6 @@ public class LivesManager {
 
     public void takePlayerLives(Player player, int amount) {
         int currentLives = getPlayerLives(player);
-        setPlayerLives(player, Math.max(currentLives - amount, 0));
+        setPlayerLives(player, Math.max(0, currentLives - amount));
     }
 }
